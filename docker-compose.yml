@@ -11,6 +11,8 @@ services:
         GROUPNAME: ${GROUPNAME}
         UID: ${UID}
         GID: ${GID}
+    ports:
+      - "9000:9000"
     volumes:
       - ./backend/:/api
     environment:
@@ -25,7 +27,7 @@ services:
       context: .
       dockerfile: ./docker/nginx/Dockerfile
     ports:
-      - ${WEB_PORT}:80
+      - "8000:80"
     depends_on:
       - backend
     volumes:
