@@ -19,6 +19,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::middleware(['api', 'cors'])->group(function () {
-    Route::post('/login', [LoginController::class, 'login']);
-});
+Route::post('/login', [LoginController::class, 'login']);
