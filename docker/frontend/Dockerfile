@@ -5,6 +5,8 @@ WORKDIR /app
 RUN apk update && \
     apk upgrade
 
-RUN npm install -g @vue/cli nuxt create-nuxt-app
+RUN npm install -g @vue/cli nuxt create-nuxt-app npm-check-updates
+
+RUN apk add python3 make g++
 
 CMD ["npm", "run", "dev"]
